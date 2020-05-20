@@ -32,7 +32,7 @@ Search by `Kuri` on the extensions tab of your VSCode.
 
 Clone the project using:
 
-`git clone ...`;
+`git clone https://github.com/matheussousaf/kuri.git`;
 
 Install the dependencies with **npm** or **yarn** if you prefer.
 
