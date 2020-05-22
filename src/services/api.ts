@@ -1,6 +1,6 @@
 import Axios, { AxiosInstance } from "axios";
 
-const UriApiUrl = "https://www.urionlinejudge.com.br/repository";
+const apiUrl = "https://www.urionlinejudge.com.br";
 
 class UriApi {
   readonly axios: AxiosInstance;
@@ -10,9 +10,13 @@ class UriApi {
   }
 
   public async getProblem(problemId: number) {
-    const data = await this.axios.get(`${UriApiUrl}/UOJ_${problemId}.html`, {});
+    const response = await this.axios.get(`${apiUrl}/repository/UOJ_${problemId}.html`, {});
+    return response.data;
+  }
 
-    return data.data;
+  public async listProblems(page: number) {
+    const response = await this.axios.get(`${apiUrl}/judge/pt/problems/index/${page}`, {});
+    return response.data;
   }
 }
 

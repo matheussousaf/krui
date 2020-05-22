@@ -47,6 +47,11 @@ export class Problems {
       vscode.ViewColumn.Two,
       { retainContextWhenHidden: true, enableScripts: true }
     );
+
+    panel.title = "Problemas";
+
+    const html = await uriApi.listProblems(1);
+    panel.webview.html = html;
   }
 
   public async getProblem() {
